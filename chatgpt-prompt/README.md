@@ -95,6 +95,6 @@ OpenAI chat model support 3 different types of roles per message when you levera
 ![alt text](./chatbot/img/chatmodel.png?raw=true)
 
 Examples of using ChatGPT as a bot:
-1. [Simple and Friendly chatbot](./chatbot/friendly_chatbot.py), nothing much on the context.
-2. [Shakespeare chat bot](./chatbot/shakespeare.py), this is based on simple instructions based to the context.
+1. [Simple and Friendly chatbot](./chatbot/friendly_chatbot.py), nothing much on the context(System).
+2. [Shakespeare chat bot](./chatbot/shakespeare.py), this is based on simple instructions passed to the context(System).
 3. [Pizza order bot](./chatbot/orderbot.py), passing complex system instructions and have the changed during the chat lifecycle.
