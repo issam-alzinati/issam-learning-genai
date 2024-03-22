@@ -83,3 +83,18 @@ Expanding a text of an email or essay to be longer, this could be a case of usin
 
 1. [Send reply email to customer review](./expanding/send_reply_email.py)
 2. [Send reply email but use details from the customer review](./expanding/send_reply_emial_with_details.py)
+
+
+## Chatbot
+
+OpenAI chat model support 3 different types of roles per message when you leverage the model:
+1. System Role: Gives overall instruction and guidelines for the chat model
+2. Assistant Role: Is the agent the will keep communicating with the user based on the earlier instruction passed to the system
+3. User Role: Is the user messages
+
+![alt text](./chatbot/img/chatmodel.png?raw=true)
+
+Examples of using ChatGPT as a bot:
+1. [Simple and Friendly chatbot](./chatbot/friendly_chatbot.py), nothing much on the context.
+2. [Shakespeare chat bot](./chatbot/shakespeare.py), this is based on simple instructions based to the context.
+3. [Pizza order bot](./chatbot/orderbot.py), passing complex system instructions and have the changed during the chat lifecycle.
