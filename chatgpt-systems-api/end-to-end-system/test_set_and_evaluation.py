@@ -1,4 +1,5 @@
 import json
+from utilities import *
 
 msg_ideal_pairs_set = [
     # eg 0
@@ -109,13 +110,13 @@ def eval_response_with_ideal(response,
     # otherwise, response is empty 
     # or ideal should be empty, there's a mismatch
     elif l_of_d == [] or ideal == []:
-        print("incorrect")
-        print(f"prod_set: {l_of_d}")
-        print(f"prod_set_ideal: {ideal}")
+        print(f"{bcolors.FAIL}incorrect{bcolors.ENDC}")
+        print(f"{bcolors.FAIL}prod_set: {l_of_d}{bcolors.ENDC}")
+        print(f"{bcolors.FAIL}prod_set_ideal: {ideal}{bcolors.ENDC}")
         if ideal == []:
-            print("response has answer while the ideal answer has empty answer")
+            print(f"{bcolors.FAIL}response has answer while the ideal answer has empty answer{bcolors.ENDC}")
         elif l_of_d == []:
-            print("response is empty while ideal has answer")
+            print(f"{bcolors.FAIL}response is empty while ideal has answer{bcolors.ENDC}")
         return 0
     
     correct = 0    
@@ -150,13 +151,13 @@ def eval_response_with_ideal(response,
                     print("correct")
                 correct +=1
             else:
-                print("incorrect")
-                print(f"prod_set: {prod_set}")
-                print(f"prod_set_ideal: {prod_set_ideal}")
+                print(f"{bcolors.FAIL}incorrect{bcolors.ENDC}")
+                print(f"{bcolors.FAIL}prod_set: {prod_set}{bcolors.ENDC}")
+                print(f"{bcolors.FAIL}prod_set_ideal: {prod_set_ideal}{bcolors.ENDC}")
                 if prod_set <= prod_set_ideal:
-                    print("response is a subset of the ideal answer")
+                    print(f"{bcolors.FAIL}response is a subset of the ideal answer{bcolors.ENDC}")
                 elif prod_set >= prod_set_ideal:
-                    print("response is a superset of the ideal answer")
+                    print(f"{bcolors.FAIL}response is a superset of the ideal answer{bcolors.ENDC}")
 
     # count correct over total number of items in list
     pc_correct = correct / len(l_of_d)
