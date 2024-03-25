@@ -92,7 +92,7 @@ OpenAI chat model support 3 different types of roles per message when you levera
 2. Assistant Role: Is the agent the will keep communicating with the user based on the earlier instruction passed to the system
 3. User Role: Is the user messages
 
-![alt text](./chatbot/img/chatmodel.png?raw=true)
+![Chat Model Roles](./chatbot/img/chatmodel.png?raw=true)
 
 Examples of using ChatGPT as a bot:
 1. [Simple and Friendly chatbot](./chatbot/friendly_chatbot.py), nothing much on the context(System).
