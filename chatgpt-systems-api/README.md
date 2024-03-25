@@ -150,5 +150,5 @@ Here are the steps you can follow to evaluate system outcomes and optimize syste
     * Fluency: Rates the grammar and readability of the answer.
 * We craft prompts for each of these criteria, taking the related products and the answer as inputs, and leveraging chain-of-thought generation and guiding the model to output a numeric score from 1-5 for each criteria.
 * We generate scores from gpt-4 with the defined prompts.
-* [Here is am example that demonstrates the above steps.](./end-to-end-system/evaluate_with_g_eval.py)
+* [Here is an example that demonstrates the above steps.](./end-to-end-system/evaluate_with_g_eval.py)
 
