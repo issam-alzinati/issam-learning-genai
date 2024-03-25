@@ -52,7 +52,11 @@ Answer the following questions:
     return response
 
 
-customer_msg = f"""I need a charger for my smartphone"""
+customer_msg = f"""
+tell me about the smartx pro phone and the fotosnap camera, the dslr one.
+Also, what TVs or TV related products do you have?"""
+# customer_msg = f"""What could be a good present for my videographer friend?"""
+# customer_msg = f"""I need a charger for my smartphone""
 
 products_by_category = find_category_and_product_v3(customer_msg, get_products_and_category())
 category_and_product_list = read_string_to_list(products_by_category)

@@ -129,6 +129,7 @@ Checking quality, relevance, and safety of the outputs before showing them to cu
 5. Step 5: Pass response moderation check.
 6. Step 6: Model evaluate the response.
 7. Step 7: Model approve the response.
+![End to End Solution](./end-to-end-system/img/end_to_end_solution.png?raw=true)
 
 ### Evaluation and Optimization
 Here are the steps you can follow to evaluate system outcomes and optimize system performance(steps 4,5 are extra and usually for enterprise systems)
@@ -137,11 +138,15 @@ Here are the steps you can follow to evaluate system outcomes and optimize syste
 3. Develop[ metrics to measure performance](./end-to-end-system/score_product_queries.py) on examples, this approach [if applied using handful set of examples it could be so effective](./end-to-end-system/score_product_test_set.py), not like regular AI testing approaches
 4. Collect randomly sampled set of example to tune to (develop set/hold-out cross validation set)
 5. Collect and use a hold-out cross test set
+![End to End Solution](./end-to-end-system/img/test_set_evaluation.png?raw=true)
 
 
 ### Evaluation design patterns
 1. [Write a set of guidelines(rubric)](./end-to-end-system/evaluate_with_rubric.py)
+![Rubric Evaluation](./end-to-end-system/img/rubric_evaluate.png?raw=true)
 2. [Use expert input and compare](./end-to-end-system/evaluate_with_expert.py)
+![Expert Evaluation](./end-to-end-system/img/expert_evaluate.png?raw=true)
+![Expert Evaluation](./end-to-end-system/img/expert_evaluate_choices.png?raw=true)
 3. Follow [G-Eval framework](https://arxiv.org/pdf/2303.16634.pdf) [implemented by OpenAI](https://github.com/openai/openai-cookbook/tree/main/examples/evaluation). 
 * We define four distinct criteria:
     * Relevance: Evaluates if the answer includes only important information and excludes redundancies.
@@ -151,4 +156,5 @@ Here are the steps you can follow to evaluate system outcomes and optimize syste
 * We craft prompts for each of these criteria, taking the related products and the answer as inputs, and leveraging chain-of-thought generation and guiding the model to output a numeric score from 1-5 for each criteria.
 * We generate scores from gpt-4 with the defined prompts.
 * [Here is an example that demonstrates the above steps.](./end-to-end-system/evaluate_with_g_eval.py)
+![Expert Evaluation](./end-to-end-system/img/geval_evaluate.png?raw=true)
 

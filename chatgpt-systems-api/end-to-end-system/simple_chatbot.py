@@ -11,5 +11,5 @@ while 1:
         break
     messages.append({'role':'user','content':user_input})
     response,messages = process_user_message(user_input,messages)
-    print(response)
+    print(f'{bcolors.OKGREEN}{response}{bcolors.ENDC}')
     messages.append({'role':'assistant', 'content':response})
