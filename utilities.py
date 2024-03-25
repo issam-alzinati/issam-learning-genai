@@ -1,6 +1,5 @@
 import openai
 import os
-from utilities import *
 
 from dotenv import load_dotenv, find_dotenv
 _ = load_dotenv(find_dotenv())
@@ -25,7 +24,26 @@ def get_completion_from_messages(messages, temperature=0, model="gpt-3.5-turbo")
         temperature=temperature, # this is the degree of randomness of the model's output
     )
     # print(str(response.choices[0].message))
+
     return response.choices[0].message.content
+
+def get_completion_and_token_count(messages, temperature=0, model="gpt-3.5-turbo"):
+    response = client.chat.completions.create(
+        model=model,
+        messages=messages,
+        temperature=temperature, # this is the degree of randomness of the model's output
+    )
+    # print(str(response.choices[0].message))
+
+    content = response.choices[0].message.content
+    
+    token_dict = {
+        'prompt_tokens':response.usage.prompt_tokens,
+        'completion_tokens':response.usage.completion_tokens,
+        'total_tokens':response.usage.total_tokens,
+    }
+
+    return content, token_dict
 
 class bcolors:
     HEADER = '\033[95m'
